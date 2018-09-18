@@ -67,12 +67,12 @@ class Book
     {
         return borrowed; 
     }
-    /*
+    
     public void setBorrowed(int borrowed)
     {
         if ()
     }
-    */
+    
     
     public void printAuthor()
     {
@@ -87,7 +87,8 @@ class Book
     public void printDetails()
     {
          System.out.println("Title: " + getTitle() + ", \n Author: " + getAuthor() 
-        + ", \n Pages: " + getPages() + ", \n Reference Number: " + getRefNumber());
+        + ", \n Pages: " + getPages() + ", \n Reference Number: " + getRefNumber() + 
+        ", \n Number of Borrowed Books: " + getBorrowed());
         
         //if else statement for length of refNumber
         if (refNumber.length() < 0)
