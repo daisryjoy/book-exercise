@@ -13,19 +13,21 @@ class Book
     private String title;
     private int pages; 
     private String refNumber;
-    private int borrowed; 
+    private int borrowed;
+    private boolean courseText; 
 
     /**
      * Set the author and title fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages,
-    String refNumber)
+    public Book(String bookAuthor, String bookTitle, int bookPages, boolean courseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        borrowed = 0; 
+        this.courseText = courseText; 
     }
 
     // Add the methods here ...
@@ -68,11 +70,15 @@ class Book
         return borrowed; 
     }
     
-    public void setBorrowed(int borrowed)
+    public void borrow()
     {
-        if ()
+        borrowed++; 
     }
     
+    public boolean isCourseText()
+    {
+        return courseText;
+    }
     
     public void printAuthor()
     {
@@ -87,8 +93,8 @@ class Book
     public void printDetails()
     {
          System.out.println("Title: " + getTitle() + ", \n Author: " + getAuthor() 
-        + ", \n Pages: " + getPages() + ", \n Reference Number: " + getRefNumber() + 
-        ", \n Number of Borrowed Books: " + getBorrowed());
+         + ", \n Pages: " + getPages() + ", \n Reference Number: " + getRefNumber() + 
+         ", \n Number of times the book has been borrowed: " + getBorrowed());
         
         //if else statement for length of refNumber
         if (refNumber.length() < 0)
